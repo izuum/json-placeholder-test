@@ -16,11 +16,4 @@ public class Specification {
                 .setAccept(ContentType.JSON)
                 .build();
     }
-
-    public static ResponseSpecification responseSpecification(){
-        return new ResponseSpecBuilder()
-                .expectContentType(ContentType.JSON)
-                .expectStatusCode(HttpStatus.SC_OK)
-                .build();
-    }
 }
