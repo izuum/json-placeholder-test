@@ -40,10 +40,11 @@ public class GetCollectionOfUsersTest {
     @DisplayName("TC-011: Элементы содержат поля id, name, username, email, address, phone, website и company")
     public void getRequestCheckElementsHasFields(){
         RestAssured.given()
+                .spec(requestSpecification())
                 .when()
                 .get("/users")
                 .then()
-                .body("every {it.containsKey('id)}", is(true))
+                .body("every {it.containsKey('id')}", is(true))
                 .body("every {it.containsKey('name')}", is(true))
                 .body("every {it.containsKey('username')}", is(true))
                 .body("every {it.containsKey('email')}", is(true))
