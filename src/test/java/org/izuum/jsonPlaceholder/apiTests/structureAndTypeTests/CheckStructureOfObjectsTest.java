@@ -77,4 +77,18 @@ public class CheckStructureOfObjectsTest {
                 .body("every {it.containsKey('address')}", is(true))
                 .body("every {it.containsKey('company')}", is(true));
     }
+
+    @Test
+    @DisplayName("TC-024: Проверка допустимости поля completed")
+    // Проверка, что каждое значение completed соответствует типу Boolean либо true, либо false, не String и не Integer
+    public void checkValidCompletedField(){
+        RestAssured.given()
+                .spec(requestSpecification())
+                .when()
+                .get("/todos")
+                .then()
+                .body("completed.findAll {it != null}", everyItem(isA(Boolean.class)))
+                .body("completed", not(hasItem(isA(String.class))))
+                .body("completed", not(hasItem(isA(Integer.class))));
+    }
 }
