@@ -9,28 +9,28 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.everyItem;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
-@DisplayName("TC-027: Фильтрация albums по userId")
-public class FilteringAlbumsByUserIdTest {
+@DisplayName("TC-028: Фильтрация photos по albumId")
+public class FilteringPhotosByAlbumIdTest {
 
     @Test
-    @DisplayName("TC-027: Статус-код 200")
+    @DisplayName("TC-028: Статус-код 200")
     public void getRequestCheckStatusCode(){
         RestAssured.given()
                 .spec(requestSpecification())
                 .when()
-                .get("/albums?userId=1")
+                .get("/photos?albumId=1")
                 .then()
                 .statusCode(HttpStatus.SC_OK);
     }
 
     @Test
-    @DisplayName("TC-027: Каждый album принадлежит userId = 1")
-    public void checkThatAllAlbumsBelongsToSpecificUserId(){
+    @DisplayName("TC-028: Каждый photo содержит albumId = 1")
+    public void checkThaTAllElementsOfPhotosHasSpecificAlbumId(){
         RestAssured.given()
                 .spec(requestSpecification())
                 .when()
-                .get("/albums?userId=1")
+                .get("/photos?albumId=1")
                 .then()
-                .body("userId", everyItem(equalTo(1)));
+                .body("albumId", everyItem(equalTo(1)));
     }
 }
