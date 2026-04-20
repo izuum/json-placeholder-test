@@ -9,28 +9,28 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.everyItem;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
-@DisplayName("TC-027: Фильтрация albums по userId")
-public class FilteringAlbumsByUserIdTest {
+@DisplayName("TC-030: Фильтрация todos по completed = true")
+public class FilteringToDosByCompletedTrueTest {
 
     @Test
-    @DisplayName("TC-027: Статус-код 200")
+    @DisplayName("TC-030: Статус-код 200")
     public void getRequestCheckStatusCode(){
         RestAssured.given()
                 .spec(requestSpecification())
                 .when()
-                .get("/albums?userId=1")
+                .get("/todos?completed=true")
                 .then()
                 .statusCode(HttpStatus.SC_OK);
     }
 
     @Test
-    @DisplayName("TC-027: Каждый album принадлежит userId = 1")
-    public void checkThatAllAlbumsBelongsToSpecificUserId(){
+    @DisplayName("TC-030: В каждом todo есть completed = true")
+    public void checkThatAllToDosHasCompletedEqualsTrue(){
         RestAssured.given()
                 .spec(requestSpecification())
                 .when()
-                .get("/albums?userId=1")
+                .get("/todos?completed=true")
                 .then()
-                .body("userId", everyItem(equalTo(1)));
+                .body("completed", everyItem(equalTo(true)));
     }
 }
