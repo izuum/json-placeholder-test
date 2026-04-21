@@ -8,10 +8,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.everyItem;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-031: Фильтрация todos по completed = false")
-public class FilteringToDosByCompletedFalseTest extends ApiTestUtils {
+public class FilteringToDosByCompletedFalseTest{
 
     @Test
     @DisplayName("TC-031: Статус-код 200")

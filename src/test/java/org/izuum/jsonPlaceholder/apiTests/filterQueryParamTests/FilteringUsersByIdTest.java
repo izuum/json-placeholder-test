@@ -8,10 +8,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasKey;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-032: Фильтрация users по id")
-public class FilteringUsersByIdTest extends ApiTestUtils {
+public class FilteringUsersByIdTest{
 
     @Test
     @DisplayName("TC-032: Статус-код 200")

@@ -8,10 +8,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.equalTo;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-035: Фильтрация по несуществующему элементу")
-public class FilteringByNotExistingValueTest extends ApiTestUtils {
+public class FilteringByNotExistingValueTest{
 
     @Test
     @DisplayName("TC-035: Статус-код 200")
