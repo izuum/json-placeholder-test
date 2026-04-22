@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static org.hamcrest.Matchers.*;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-001: Получение коллекции posts")
@@ -14,12 +15,7 @@ public class GetCollectionOfPostsTest {
     @Test
     @DisplayName("TC-001: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        RestAssured.given()
-                .spec(requestSpecification())
-                .when()
-                .get("/posts")
-                .then()
-                .statusCode(HttpStatus.SC_OK);
+        checkStatusCode("/posts", HttpStatus.SC_OK);
     }
 
     @Test

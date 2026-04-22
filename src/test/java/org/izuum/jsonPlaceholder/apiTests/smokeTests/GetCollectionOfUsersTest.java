@@ -9,6 +9,7 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-011: Получение коллекции users")
@@ -17,12 +18,7 @@ public class GetCollectionOfUsersTest {
     @Test
     @DisplayName("TC-011: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        RestAssured.given()
-                .spec(requestSpecification())
-                .when()
-                .get("/users")
-                .then()
-                .statusCode(HttpStatus.SC_OK);
+        checkStatusCode("/users", HttpStatus.SC_OK);
     }
 
     @Test

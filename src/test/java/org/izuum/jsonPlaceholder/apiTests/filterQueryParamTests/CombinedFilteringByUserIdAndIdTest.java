@@ -2,7 +2,6 @@ package org.izuum.jsonPlaceholder.apiTests.filterQueryParamTests;
 
 import io.restassured.RestAssured;
 import org.apache.http.HttpStatus;
-import org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

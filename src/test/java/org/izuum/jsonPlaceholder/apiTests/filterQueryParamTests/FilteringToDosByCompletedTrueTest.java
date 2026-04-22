@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.everyItem;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-030: Фильтрация todos по completed = true")
@@ -15,12 +16,7 @@ public class FilteringToDosByCompletedTrueTest {
     @Test
     @DisplayName("TC-030: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        RestAssured.given()
-                .spec(requestSpecification())
-                .when()
-                .get("/todos?completed=true")
-                .then()
-                .statusCode(HttpStatus.SC_OK);
+        checkStatusCode("/todos?completed=true", HttpStatus.SC_OK);
     }
 
     @Test

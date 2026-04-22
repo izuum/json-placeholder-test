@@ -2,12 +2,10 @@ package org.izuum.jsonPlaceholder.apiTests.filterQueryParamTests;
 
 import io.restassured.RestAssured;
 import org.apache.http.HttpStatus;
-import org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasKey;
 import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
