@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.hasKey;
 import static org.hamcrest.Matchers.instanceOf;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-012: Получение user по id")
@@ -15,12 +16,7 @@ public class GetUserByIdTest {
     @Test
     @DisplayName("TC-012: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        RestAssured.given()
-                .spec(requestSpecification())
-                .when()
-                .get("/users/1")
-                .then()
-                .statusCode(HttpStatus.SC_OK);
+        checkStatusCode("/users/1", HttpStatus.SC_OK);
     }
 
     @Test

@@ -9,6 +9,7 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.is;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-005: Получение коллекции albums")
@@ -17,12 +18,7 @@ public class GetCollectionOfAlbumsTest {
     @Test
     @DisplayName("TC-005: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        RestAssured.given()
-                .spec(requestSpecification())
-                .when()
-                .get("/albums")
-                .then()
-                .statusCode(HttpStatus.SC_OK);
+        checkStatusCode("/albums", HttpStatus.SC_OK);
     }
 
     @Test

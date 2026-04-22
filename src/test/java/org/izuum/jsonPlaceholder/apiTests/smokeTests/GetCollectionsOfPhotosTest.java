@@ -1,6 +1,5 @@
 package org.izuum.jsonPlaceholder.apiTests.smokeTests;
 
-
 import io.restassured.RestAssured;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.DisplayName;
@@ -10,6 +9,7 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-007: Получение коллекции photos")
@@ -18,12 +18,7 @@ public class GetCollectionsOfPhotosTest {
     @Test
     @DisplayName("TC-007: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        RestAssured.given()
-                .spec(requestSpecification())
-                .when()
-                .get("/photos")
-                .then()
-                .statusCode(HttpStatus.SC_OK);
+        checkStatusCode("/photos", HttpStatus.SC_OK);
     }
 
     @Test

@@ -2,12 +2,10 @@ package org.izuum.jsonPlaceholder.apiTests.filterQueryParamTests;
 
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
-import org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
 import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.getResponse;
 
 @DisplayName("TC-036: Некорректное значение boolean-фильтра")

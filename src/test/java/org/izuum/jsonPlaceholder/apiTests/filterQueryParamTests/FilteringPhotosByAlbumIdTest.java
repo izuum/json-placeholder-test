@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.everyItem;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-028: Фильтрация photos по albumId")
@@ -15,12 +16,7 @@ public class FilteringPhotosByAlbumIdTest {
     @Test
     @DisplayName("TC-028: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        RestAssured.given()
-                .spec(requestSpecification())
-                .when()
-                .get("/photos?albumId=1")
-                .then()
-                .statusCode(HttpStatus.SC_OK);
+        checkStatusCode("/photos?albumId=1", HttpStatus.SC_OK);
     }
 
     @Test
