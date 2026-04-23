@@ -17,6 +17,8 @@ target/
 .settings/
 .classpath
 .project
+.allure/
+allure-results/
 
 ### Eclipse ###
 .apt_generated
