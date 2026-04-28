@@ -26,6 +26,9 @@ jobs:
       - name: Start tests
         run: mvn clean test
 
+      - name: Generate allure report
+        run: mvn allure:report
+
       - name: Save report
         uses: actions/upload-artifact@v4
         with:
