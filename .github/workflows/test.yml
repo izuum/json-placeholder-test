@@ -74,4 +74,5 @@ jobs:
             --project JPHT \
             --source "api-tests" \
             --junit target/surefire-reports/TEST-*.xml
+            --testcases
 
