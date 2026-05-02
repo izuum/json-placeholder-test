@@ -94,6 +94,12 @@
                         <allure.results.directory>${project.basedir}/allure-results</allure.results.directory>
                         <file.encoding>UTF-8</file.encoding>
                     </systemPropertyVariables>
+                    <properties>
+                        <property>
+                            <name>junit.jupiter.output.dir</name>
+                            <value>${project.build.directory}/test-results</value>
+                        </property>
+                    </properties>
                 </configuration>
             </plugin>
             <plugin>
