@@ -71,7 +71,7 @@ jobs:
           TESTINY_API_KEY: ${{ secrets.TESTINY_API_KEY }}
         run: |
           npx @testiny/cli automation \
-            --project JPHT
+            --project JPHT \
             --source "api-tests" \
             --auto-create \
             --junit target/surefire-reports/TEST-*.xml
