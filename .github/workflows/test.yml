@@ -71,7 +71,7 @@ jobs:
           TESTINY_API_KEY: ${{ secrets.TESTINY_API_KEY }}
         run: |
           npx @testiny/cli testrun \
-            --testcases
+            --testcases create
 
       - name: Upload results to Testiny
         if: ${{ !cancelled() }}
