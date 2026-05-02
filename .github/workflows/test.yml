@@ -26,7 +26,15 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Start tests
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Install Testiny CLI
+        run: npm install --no-save @testiny/cli@latest
+
+      - name: Run tests with JUnit report
         run: mvn clean test
 
       - name: Generate allure report
@@ -55,3 +63,14 @@ jobs:
           path: |
              target/site/allure-maven-plugin
              allure-results
+
+      - name: Upload results to Testiny
+        if: ${{ !cancelled() }}
+        env:
+          TESTINY_API_KEY: ${{ secrets.TESTINY_API_KEY }}
+        run: |
+          npx @testiny/cli automation \
+            --project JPHT
+            --source "api-tests" \
+            --junit target/surefire-reports/TEST-*.xml
+
