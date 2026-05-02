@@ -1,6 +1,7 @@
 name: API tests CI
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - '*'
