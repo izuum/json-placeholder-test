@@ -65,6 +65,14 @@ jobs:
              target/site/allure-maven-plugin
              allure-results
 
+      - name: Update testcases in Testiny
+        if: ${{ !cancelled() }}
+        env:
+          TESTINY_API_KEY: ${{ secrets.TESTINY_API_KEY }}
+        run: |
+          npx @testiny/cli testrun \
+            --testcases create
+
       - name: Upload results to Testiny
         if: ${{ !cancelled() }}
         env:
