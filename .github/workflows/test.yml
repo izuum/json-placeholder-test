@@ -73,4 +73,5 @@ jobs:
           npx @testiny/cli automation \
             --project JPHT \
             --source "api-tests" \
-            --junit target/surefire-reports/TEST-*.xml
+            --junit target/surefire-reports/TEST-*.xml \
+            --run-fields ci_repository,ci_run_id,github_run_attempt
