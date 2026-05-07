@@ -19,8 +19,10 @@ public class GetPostByIdOutOfExpectedRangeTest {
         assertNotEquals(HttpStatus.SC_OK, response.statusCode());
         assertEquals("{}", response.getBody().asString());
 
+        System.out.println("TC-051: ======Фиксация контракта======");
         System.out.println("Запрос GET /post/0");
         System.out.println("Статус-код: " + response.statusCode());
         System.out.println("Тело ответа: " + response.getBody().asString());
+        System.out.println("======================================");
     }
 }
