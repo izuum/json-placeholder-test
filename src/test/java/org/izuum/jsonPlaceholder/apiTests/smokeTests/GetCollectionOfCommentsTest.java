@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.hamcrest.Matchers.*;
-import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCodeGet;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-003: Получение коллекции comments")
@@ -17,7 +17,7 @@ public class GetCollectionOfCommentsTest {
     @Test
     @DisplayName("TC-003: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        checkStatusCode("/comments", HttpStatus.SC_OK);
+        checkStatusCodeGet("/comments", HttpStatus.SC_OK);
     }
 
     @Test

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.instanceOf;
-import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCodeGet;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-008: Получение photo по id")
@@ -16,7 +16,7 @@ public class GetPhotoByIdTest {
     @Test
     @DisplayName("TC-008: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        checkStatusCode("/photos/1", HttpStatus.SC_OK);
+        checkStatusCodeGet("/photos/1", HttpStatus.SC_OK);
     }
 
     @Test

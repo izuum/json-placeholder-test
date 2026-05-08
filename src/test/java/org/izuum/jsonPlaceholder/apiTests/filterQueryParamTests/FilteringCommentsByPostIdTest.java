@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.everyItem;
-import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCodeGet;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-026: Фильтрация comments по postId")
@@ -16,7 +16,7 @@ public class FilteringCommentsByPostIdTest {
     @Test
     @DisplayName("TC-026: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        checkStatusCode("/comments?postId=1", HttpStatus.SC_OK);
+        checkStatusCodeGet("/comments?postId=1", HttpStatus.SC_OK);
     }
 
     @Test

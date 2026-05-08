@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.*;
-import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCodeGet;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-006: Получение album по id")
@@ -15,7 +15,7 @@ public class GetAlbumByIdTest {
     @Test
     @DisplayName("TC-006: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        checkStatusCode("/albums/1", HttpStatus.SC_OK);
+        checkStatusCodeGet("/albums/1", HttpStatus.SC_OK);
     }
 
     @Test

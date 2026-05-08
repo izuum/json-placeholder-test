@@ -9,7 +9,7 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
-import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCodeGet;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-009: Получение коллекции todos")
@@ -18,7 +18,7 @@ public class GetCollectionOfToDoTest {
     @Test
     @DisplayName("TC-009: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        checkStatusCode("/todos", HttpStatus.SC_OK);
+        checkStatusCodeGet("/todos", HttpStatus.SC_OK);
     }
 
     @Test
