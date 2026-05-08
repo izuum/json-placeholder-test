@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
-import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCodeGet;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-034: Комбинация нескольких фильтров")
@@ -15,7 +15,7 @@ public class CombinedFilteringByUserIdAndIdTest{
     @Test
     @DisplayName("TC-034: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        checkStatusCode("/posts?userId=1&id=1", HttpStatus.SC_OK);
+        checkStatusCodeGet("/posts?userId=1&id=1", HttpStatus.SC_OK);
     }
 
     @Test

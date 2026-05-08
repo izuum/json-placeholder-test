@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.hamcrest.Matchers.*;
-import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCodeGet;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-041: Получение albums пользователя")
@@ -17,7 +17,7 @@ public class GetAlbumsOfUserTest {
     @Test
     @DisplayName("TC-041: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        checkStatusCode("/users/1/albums", HttpStatus.SC_OK);
+        checkStatusCodeGet("/users/1/albums", HttpStatus.SC_OK);
     }
 
     @Test

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.*;
-import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCodeGet;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-002: Получение конкретного post по id")
@@ -15,7 +15,7 @@ public class GetPostByIdTest {
     @Test
     @DisplayName("TC-002: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        checkStatusCode("/posts/1",  HttpStatus.SC_OK);
+        checkStatusCodeGet("/posts/1",  HttpStatus.SC_OK);
     }
 
     @Test

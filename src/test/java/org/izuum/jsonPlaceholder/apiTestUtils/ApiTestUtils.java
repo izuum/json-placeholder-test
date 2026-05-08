@@ -10,11 +10,20 @@ import static org.izuum.jsonPlaceholder.specification.Specification.requestSpeci
 public class ApiTestUtils {
 
     //Метод для проверки статус-кода
-    public static void checkStatusCode(String endpoint, int statusCode){
+    public static void checkStatusCodeGet(String endpoint, int statusCode){
         RestAssured.given()
                 .spec(requestSpecification())
                 .when()
                 .get(endpoint)
+                .then()
+                .statusCode(statusCode);
+    }
+
+    public static void checkStatusCodePost(String endpoint, int statusCode){
+        RestAssured.given()
+                .spec(requestSpecification())
+                .when()
+                .post(endpoint)
                 .then()
                 .statusCode(statusCode);
     }

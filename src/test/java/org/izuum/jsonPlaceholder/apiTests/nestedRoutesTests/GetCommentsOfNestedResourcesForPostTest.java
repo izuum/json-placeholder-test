@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.hamcrest.Matchers.*;
-import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCodeGet;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-039: Получить comments вложенного ресурса для post")
@@ -17,7 +17,7 @@ public class GetCommentsOfNestedResourcesForPostTest {
     @Test
     @DisplayName("TC-039: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        checkStatusCode("/posts/1/comments", HttpStatus.SC_OK);
+        checkStatusCodeGet("/posts/1/comments", HttpStatus.SC_OK);
     }
 
     @Test

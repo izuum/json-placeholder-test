@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.hamcrest.Matchers.*;
-import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCodeGet;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-040: Получить photos вложенного ресурса для album")
@@ -17,7 +17,7 @@ public class GetPhotosOfNestedResourcesForAlbumsTest {
     @Test
     @DisplayName("TC-040: Статус-код 200")
     public void getRequestCheckStatusCode(){
-        checkStatusCode("/albums/1/photos", HttpStatus.SC_OK);
+        checkStatusCodeGet("/albums/1/photos", HttpStatus.SC_OK);
     }
 
     @Test

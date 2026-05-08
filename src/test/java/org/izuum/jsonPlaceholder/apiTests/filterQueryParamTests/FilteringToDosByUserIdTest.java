@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.everyItem;
-import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCode;
+import static org.izuum.jsonPlaceholder.apiTestUtils.ApiTestUtils.checkStatusCodeGet;
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
 @DisplayName("TC-029: Фильтрация todos по userId")
@@ -16,7 +16,7 @@ public class FilteringToDosByUserIdTest {
     @Test
     @DisplayName("TC-029: Статус-код 200")
     public void getRequestCheckStatusCodee(){
-        checkStatusCode("/todos?userId=1", HttpStatus.SC_OK);
+        checkStatusCodeGet("/todos?userId=1", HttpStatus.SC_OK);
     }
 
     @Test
