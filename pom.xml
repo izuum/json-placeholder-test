@@ -76,6 +76,11 @@
             <version>${allure.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-engine</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
