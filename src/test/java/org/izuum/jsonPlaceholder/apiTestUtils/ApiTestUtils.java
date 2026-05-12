@@ -4,6 +4,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 
@@ -45,5 +46,14 @@ public class ApiTestUtils {
         List<Integer> filteredList = filteredResponse.jsonPath().getList(comparableFields);
 
         return nestedList.equals(filteredList);
+    }
+
+    //Метод для отправки Post-запроса с телом
+    public static Response postRequestBody(String endpoint, Map<String,Object> requestBody){
+        return RestAssured.given()
+                .spec(requestSpecification())
+                .body(requestBody)
+                .when()
+                .post(endpoint);
     }
 }
