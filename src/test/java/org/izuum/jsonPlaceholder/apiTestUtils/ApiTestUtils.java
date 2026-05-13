@@ -53,6 +53,7 @@ public class ApiTestUtils {
         return RestAssured.given()
                 .spec(requestSpecification())
                 .body(requestBody)
+                .log().all()
                 .when()
                 .post(endpoint);
     }
