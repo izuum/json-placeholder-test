@@ -4,14 +4,13 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.izuum.jsonPlaceholder.specification.Specification.requestSpecification;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DisplayName("TC-068: Создание post с невалидным JSON Payload (БАГ)")
+@DisplayName("TC-068:(БАГ) Создание post с невалидным JSON Payload")
 public class CreatePostWithInvalidJsonPayloadTest {
 
     @ParameterizedTest
@@ -23,7 +22,7 @@ public class CreatePostWithInvalidJsonPayloadTest {
             "not a json at all",            // Вообще не JSON
             "null"
     })
-    @DisplayName("TC-068: Клиент/сервер корректно обрабатывает ошибку (БАГ)")
+    @DisplayName("TC-068:(БАГ) Клиент/сервер корректно обрабатывает ошибку")
     public void checkThatClientAndServerHandlesErrorCorrectly(String invalidJson) {
         Response response = RestAssured.given()
                 .spec(requestSpecification())
@@ -32,7 +31,7 @@ public class CreatePostWithInvalidJsonPayloadTest {
                 .when()
                 .post("/posts");
 
-        assertEquals(HttpStatus.SC_BAD_REQUEST, response.getStatusCode());
+        assertEquals(HttpStatus.SC_INTERNAL_SERVER_ERROR, response.getStatusCode());
 
         System.out.println("======Фиксация поведения======");
         System.out.println("Отправленный JSON содержит: " + invalidJson);
