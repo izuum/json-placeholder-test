@@ -57,4 +57,14 @@ public class ApiTestUtils {
                 .when()
                 .post(endpoint);
     }
+
+    //Метод для отправки Put-запроса с телом
+    public static Response putRequestBody(String endpoint, Map<String,Object> requestBody){
+        return RestAssured.given()
+                .spec(requestSpecification())
+                .body(requestBody)
+                .log().all()
+                .when()
+                .put(endpoint);
+    }
 }
