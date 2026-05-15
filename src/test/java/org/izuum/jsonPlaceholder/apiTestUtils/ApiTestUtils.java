@@ -67,4 +67,14 @@ public class ApiTestUtils {
                 .when()
                 .put(endpoint);
     }
+
+    //Метод для отправки Patch-запроса с телом
+    public static Response patchRequestBody(String endpoint, Map<String,Object> requestBody){
+        return RestAssured.given()
+                .spec(requestSpecification())
+                .body(requestBody)
+                .log().all()
+                .when()
+                .patch(endpoint);
+    }
 }
