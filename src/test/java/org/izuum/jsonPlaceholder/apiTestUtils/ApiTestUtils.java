@@ -77,4 +77,12 @@ public class ApiTestUtils {
                 .when()
                 .patch(endpoint);
     }
+
+    //Метод для отправки Delete-запроса
+    public static Response deleteResource(String endpoint){
+        return RestAssured.given()
+                .spec(requestSpecification())
+                .when()
+                .delete(endpoint);
+    }
 }
