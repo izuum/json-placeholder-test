@@ -42,6 +42,7 @@ public class CheckSnapshotOfFirstFivePostsTest {
                     .writerWithDefaultPrettyPrinter().writeValueAsString(firstFivePosts);
 
             if(run == 1 && !Files.exists(snapshotPath)){
+                Files.createDirectory(snapshotPath.getParent());
                 Files.writeString(snapshotPath, currentSnapshot);
                 System.out.println("Создан эталон: " + currentSnapshot);
             } else {
@@ -52,5 +53,6 @@ public class CheckSnapshotOfFirstFivePostsTest {
                         "Snapshot не совпадает с эталоном -> API изменился!");
             }
         }
+        System.out.println("Все проверки завершены успешно!");
     }
 }
