@@ -27,7 +27,7 @@ public class GetPostByIdWithDtoTest {
         assertAll(
                 () -> assertEquals(1, post.getId(), "Id не равен 1"),
                 () -> assertNotNull(post.getTitle(), "Title равен null"),
-                () -> assertNotNull(post.getBody(), "Body равне null"),
+                () -> assertNotNull(post.getBody(), "Body равен null"),
                 () -> assertTrue(post.getUserId() > 0, "UserId меньше 1")
         );
     }
