@@ -14,11 +14,11 @@ public class Todo {
     private String title;
 
     @JsonProperty("completed")
-    private boolean completed;
+    private Boolean completed;
 
     public Todo() {}
 
-    public Todo(int userId, int id, String title, boolean completed) {
+    public Todo(int userId, int id, String title, Boolean completed) {
         this.userId = userId;
         this.id = id;
         this.title = title;
@@ -49,7 +49,7 @@ public class Todo {
     public boolean getCompleted() {
         return completed;
     }
-    public void setCompleted(boolean completed) {
+    public void setCompleted(Boolean completed) {
         this.completed = completed;
     }
 
